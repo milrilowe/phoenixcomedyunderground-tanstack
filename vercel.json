@@ -1,0 +1,24 @@
+{
+    "functions": {
+        "app/**": {
+            "runtime": "nodejs20.x"
+        }
+    },
+    "headers": [
+        {
+            "source": "/((?!api/).*)",
+            "headers": [
+                {
+                    "key": "Content-Security-Policy",
+                    "value": "script-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https:; media-src 'self'; object-src 'none'; child-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self';"
+                }
+            ]
+        }
+    ],
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/api/index"
+        }
+    ]
+}

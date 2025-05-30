@@ -1,5 +1,5 @@
 import { defineConfig } from '@tanstack/react-start/config'
-import type { PluginOption } from 'vite'; //TODO: delete this
+import type { PluginOption } from 'vite'
 import { fileURLToPath } from 'url'
 import { dirname, resolve } from 'path'
 import tsConfigPaths from 'vite-tsconfig-paths'
