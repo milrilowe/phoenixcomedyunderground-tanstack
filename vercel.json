@@ -1,9 +1,4 @@
 {
-    "functions": {
-        "app/**": {
-            "runtime": "nodejs20.x"
-        }
-    },
     "headers": [
         {
             "source": "/((?!api/).*)",
@@ -15,10 +10,5 @@
             ]
         }
     ],
-    "rewrites": [
-        {
-            "source": "/(.*)",
-            "destination": "/api/index"
-        }
-    ]
+    "buildCommand": "npm run build"
 }
