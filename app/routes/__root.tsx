@@ -23,6 +23,11 @@ export const Route = createRootRoute({
             {
                 title: 'Phoenix Comedy Underground',
             },
+            // Add CSP meta tag to allow scripts
+            {
+                httpEquiv: 'Content-Security-Policy',
+                content: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob:; script-src-elem 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https: wss:; media-src 'self'; object-src 'none'; child-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
+            }
         ],
         links: [
             { rel: 'stylesheet', href: appCss },
@@ -30,7 +35,6 @@ export const Route = createRootRoute({
             { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
             { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
             { rel: 'manifest', href: '/site.webmanifest' },
-
         ]
     }),
     beforeLoad: async () => {
